@@ -1,0 +1,669 @@
+2018-03-06 10:28:59.448  INFO 1510 --- [main] com.pyco.todolist.CoreApplication    : Starting TodoListApplication on mbp-0083.local with PID 1510 (/Users/dat.phamtien/Desktop/projects/on-boarding/todo-list/core-application/target/classes started by dat.phamtien in /Users/dat.phamtien/Desktop/projects/on-boarding/todo-list)
+2018-03-06 10:28:59.451  INFO 1510 --- [main] com.pyco.todolist.CoreApplication    : No active profile set, falling back to default profiles: default
+2018-03-06 10:28:59.521  INFO 1510 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@534df152: startup date [Tue Mar 06 10:28:59 ICT 2018]; root of context hierarchy
+2018-03-06 10:29:00.542  INFO 1510 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-03-06 10:29:00.566  INFO 1510 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$1520e897] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-06 10:29:01.163  INFO 1510 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8001 (http)
+2018-03-06 10:29:01.181  INFO 1510 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-06 10:29:01.183  INFO 1510 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-06 10:29:01.345  INFO 1510 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-06 10:29:01.345  INFO 1510 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1828 ms
+2018-03-06 10:29:01.547  INFO 1510 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-06 10:29:01.547  INFO 1510 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-06 10:29:01.548  INFO 1510 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-06 10:29:01.548  INFO 1510 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-06 10:29:01.550  INFO 1510 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-06 10:29:01.550  INFO 1510 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-06 10:29:01.951  INFO 1510 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27000], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2018-03-06 10:29:01.951  INFO 1510 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:27000 to client view of cluster
+2018-03-06 10:29:02.000  INFO 1510 --- [cluster-ClusterId{value='5a9e0afd4ca3a005e66b9c15', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:113) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 10:29:02.181  INFO 1510 --- [main] org.mongodb.driver.cluster               : No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=MULTIPLE, serverDescriptions=[ServerDescription{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]}. Waiting for 30000 ms before timing out
+2018-03-06 10:29:32.188  WARN 1510 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'todoListApplication': Unsatisfied dependency expressed through field 'personRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'personRepository': Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDataAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]
+2018-03-06 10:29:32.191  INFO 1510 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-03-06 10:29:32.207  INFO 1510 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-03-06 10:29:32.210 ERROR 1510 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'todoListApplication': Unsatisfied dependency expressed through field 'personRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'personRepository': Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDataAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at com.pyco.todolist.CoreApplication.main(TodoListApplication.java:43) [classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'personRepository': Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDataAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1531) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDataAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	... 32 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.MongoTemplate]: Factory method 'mongoTemplate' threw exception; nested exception is org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	... 41 common frames omitted
+Caused by: org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]
+	at org.springframework.data.mongodb.core.MongoExceptionTranslator.translateExceptionIfPossible(MongoExceptionTranslator.java:77) ~[spring-data-mongodb-1.10.10.RELEASE.jar:na]
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:162) ~[spring-data-mongodb-1.10.10.RELEASE.jar:na]
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:133) ~[spring-data-mongodb-1.10.10.RELEASE.jar:na]
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:125) ~[spring-data-mongodb-1.10.10.RELEASE.jar:na]
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.<init>(MongoPersistentEntityIndexCreator.java:91) ~[spring-data-mongodb-1.10.10.RELEASE.jar:na]
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.<init>(MongoPersistentEntityIndexCreator.java:68) ~[spring-data-mongodb-1.10.10.RELEASE.jar:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.<init>(MongoTemplate.java:233) ~[spring-data-mongodb-1.10.10.RELEASE.jar:na]
+	at org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration.mongoTemplate(MongoDataAutoConfiguration.java:100) ~[spring-boot-autoconfigure-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration$$EnhancerBySpringCGLIB$$c7da7b54.CGLIB$mongoTemplate$2(<generated>) ~[spring-boot-autoconfigure-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration$$EnhancerBySpringCGLIB$$c7da7b54$$FastClassBySpringCGLIB$$f802a939.invoke(<generated>) ~[spring-boot-autoconfigure-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358) ~[spring-context-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	at org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration$$EnhancerBySpringCGLIB$$c7da7b54.mongoTemplate(<generated>) ~[spring-boot-autoconfigure-1.5.10.RELEASE.jar:1.5.10.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_162]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_162]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_162]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_162]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[spring-beans-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+	... 42 common frames omitted
+Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]
+	at com.mongodb.connection.BaseCluster.createTimeoutException(BaseCluster.java:377) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.BaseCluster.selectServer(BaseCluster.java:104) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.binding.ClusterBinding$ClusterBindingConnectionSource.<init>(ClusterBinding.java:75) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.binding.ClusterBinding$ClusterBindingConnectionSource.<init>(ClusterBinding.java:71) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.binding.ClusterBinding.getWriteConnectionSource(ClusterBinding.java:68) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:415) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.operation.CreateIndexesOperation.execute(CreateIndexesOperation.java:144) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.operation.CreateIndexesOperation.execute(CreateIndexesOperation.java:71) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.Mongo.execute(Mongo.java:845) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.Mongo$2.execute(Mongo.java:828) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.DBCollection.createIndex(DBCollection.java:1618) ~[mongo-java-driver-3.4.3.jar:na]
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:142) ~[spring-data-mongodb-1.10.10.RELEASE.jar:na]
+	... 58 common frames omitted
+
+2018-03-06 10:35:19.752  INFO 1985 --- [main] com.pyco.todolist.CoreApplication    : Starting TodoListApplication on mbp-0083.local with PID 1985 (/Users/dat.phamtien/Desktop/projects/on-boarding/todo-list/core-application/target/classes started by dat.phamtien in /Users/dat.phamtien/Desktop/projects/on-boarding/todo-list)
+2018-03-06 10:35:19.757  INFO 1985 --- [main] com.pyco.todolist.CoreApplication    : No active profile set, falling back to default profiles: default
+2018-03-06 10:35:19.817  INFO 1985 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@229c6181: startup date [Tue Mar 06 10:35:19 ICT 2018]; root of context hierarchy
+2018-03-06 10:35:20.826  INFO 1985 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-03-06 10:35:20.853  INFO 1985 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$fffee87a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-06 10:35:21.306  INFO 1985 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8001 (http)
+2018-03-06 10:35:21.322  INFO 1985 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-06 10:35:21.323  INFO 1985 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-06 10:35:21.433  INFO 1985 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-06 10:35:21.433  INFO 1985 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1619 ms
+2018-03-06 10:35:21.601  INFO 1985 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-06 10:35:21.601  INFO 1985 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-06 10:35:21.602  INFO 1985 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-06 10:35:21.602  INFO 1985 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-06 10:35:21.603  INFO 1985 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-06 10:35:21.603  INFO 1985 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-06 10:35:21.894  INFO 1985 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27000], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2018-03-06 10:35:21.895  INFO 1985 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:27000 to client view of cluster
+2018-03-06 10:35:21.965  INFO 1985 --- [cluster-ClusterId{value='5a9e0c794ca3a007c1398d62', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27000
+2018-03-06 10:35:21.967  INFO 1985 --- [cluster-ClusterId{value='5a9e0c794ca3a007c1398d62', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 3]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, roundTripTimeNanos=808503}
+2018-03-06 10:35:21.968  INFO 1985 --- [cluster-ClusterId{value='5a9e0c794ca3a007c1398d62', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2018-03-06 10:35:22.114  INFO 1985 --- [main] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27000
+2018-03-06 10:35:22.786  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/public/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.pyco.todolist.endpoint.PersonEndpoint.registerPerson(com.pyco.todolist.dto.UserDto)
+2018-03-06 10:35:22.791  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/private/todos],methods=[GET]}" onto public org.springframework.data.domain.Page<com.pyco.todolist.doimain.Task> com.pyco.todolist.endpoint.TaskEndpoint.getTodos(org.springframework.data.domain.Pageable,java.lang.String,java.time.LocalDate,java.time.LocalDate)
+2018-03-06 10:35:22.792  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/private/todos],methods=[POST]}" onto public com.pyco.todolist.dto.TaskDto com.pyco.todolist.endpoint.TaskEndpoint.createTodo(com.pyco.todolist.dto.TaskDto)
+2018-03-06 10:35:22.793  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/private/todos],methods=[PUT]}" onto public com.pyco.todolist.dto.TaskDto com.pyco.todolist.endpoint.TaskEndpoint.updateTodo(com.pyco.todolist.dto.TaskDto)
+2018-03-06 10:35:22.793  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/private/todos/{taskId}],methods=[DELETE]}" onto public void com.pyco.todolist.endpoint.TaskEndpoint.deleteTodo(java.lang.String)
+2018-03-06 10:35:22.796  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-03-06 10:35:22.797  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-03-06 10:35:22.797  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-03-06 10:35:22.801  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-06 10:35:22.802  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-06 10:35:22.958  INFO 1985 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-03-06 10:35:23.372  INFO 1985 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ee77baf, org.springframework.security.web.context.SecurityContextPersistenceFilter@7cd1ec54, org.springframework.security.web.header.HeaderWriterFilter@241fc278, org.springframework.security.web.authentication.logout.LogoutFilter@6c27e700, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4948daec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d420cdd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f24ce45, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@485deee1, org.springframework.security.web.session.SessionManagementFilter@44abdb1f, org.springframework.security.web.access.ExceptionTranslationFilter@32e697ac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b5de9ac]
+2018-03-06 10:35:23.610  INFO 1985 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@229c6181: startup date [Tue Mar 06 10:35:19 ICT 2018]; root of context hierarchy
+2018-03-06 10:35:23.683  INFO 1985 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-06 10:35:23.684  INFO 1985 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-06 10:35:23.703  INFO 1985 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalHandleExceptionHandler
+2018-03-06 10:35:23.730  INFO 1985 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-06 10:35:24.000  INFO 1985 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-06 10:35:24.010  INFO 1985 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-03-06 10:35:24.010  INFO 1985 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-03-06 10:35:24.031  INFO 1985 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-03-06 10:35:24.081  INFO 1985 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-03-06 10:35:24.382  INFO 1985 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8001 (http)
+2018-03-06 10:35:24.594  INFO 1985 --- [main] com.pyco.todolist.producer.Sender        : sending payload='Hello Spring Kafka!' to topic='helloworld.t'
+2018-03-06 10:35:24.613  INFO 1985 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2018-03-06 10:35:24.618  INFO 1985 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2018-03-06 10:35:24.647  INFO 1985 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 0.10.1.1
+2018-03-06 10:35:24.647  INFO 1985 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : f10ef2720b03b247
+2018-03-06 10:35:24.821  WARN 1985 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : Error while fetching metadata with correlation id 0 : {helloworld.t=LEADER_NOT_AVAILABLE}
+2018-03-06 10:35:25.033  INFO 1985 --- [main] com.pyco.todolist.CoreApplication    : Started TodoListApplication in 5.618 seconds (JVM running for 6.348)
+2018-03-06 10:35:36.878  INFO 1985 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-06 10:35:36.879  INFO 1985 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-03-06 10:35:36.894  INFO 1985 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2018-03-06 13:00:18.977  INFO 1985 --- [Thread-3] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@229c6181: startup date [Tue Mar 06 10:35:19 ICT 2018]; root of context hierarchy
+2018-03-06 13:00:18.979  INFO 1985 --- [Thread-3] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2018-03-06 13:00:18.980  INFO 1985 --- [Thread-3] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2018-03-06 13:00:18.980  INFO 1985 --- [Thread-3] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-03-06 13:00:18.982  INFO 1985 --- [Thread-3] o.a.k.clients.producer.KafkaProducer     : Closing the Kafka producer with timeoutMillis = 30000 ms.
+2018-03-06 13:00:18.987  INFO 1985 --- [Thread-3] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:2}] to localhost:27000 because the pool has been closed.
+2018-03-06 13:07:03.015  INFO 2481 --- [main] com.pyco.todolist.CoreApplication        : Starting CoreApplication on mbp-0083.local with PID 2481 (/Users/dat.phamtien/Desktop/projects/on-boarding/todo-list/core-application/target/classes started by dat.phamtien in /Users/dat.phamtien/Desktop/projects/on-boarding/todo-list)
+2018-03-06 13:07:03.022  INFO 2481 --- [main] com.pyco.todolist.CoreApplication        : No active profile set, falling back to default profiles: default
+2018-03-06 13:07:03.102  INFO 2481 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@229c6181: startup date [Tue Mar 06 13:07:03 ICT 2018]; root of context hierarchy
+2018-03-06 13:07:04.209  INFO 2481 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-03-06 13:07:04.242  INFO 2481 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$9902b14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-06 13:07:04.781  INFO 2481 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8001 (http)
+2018-03-06 13:07:04.798  INFO 2481 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-06 13:07:04.799  INFO 2481 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-06 13:07:04.924  INFO 2481 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-06 13:07:04.924  INFO 2481 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1826 ms
+2018-03-06 13:07:05.136  INFO 2481 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-06 13:07:05.137  INFO 2481 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-06 13:07:05.137  INFO 2481 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-06 13:07:05.137  INFO 2481 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-06 13:07:05.138  INFO 2481 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-03-06 13:07:05.139  INFO 2481 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-06 13:07:05.472  INFO 2481 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27000], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2018-03-06 13:07:05.473  INFO 2481 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:27000 to client view of cluster
+2018-03-06 13:07:05.554  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:5}] to localhost:27000
+2018-03-06 13:07:05.556  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 3]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, roundTripTimeNanos=958067}
+2018-03-06 13:07:05.557  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2018-03-06 13:07:05.726  INFO 2481 --- [main] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:6}] to localhost:27000
+2018-03-06 13:07:06.425  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/public/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.pyco.todolist.endpoint.PersonEndpoint.registerPerson(com.pyco.todolist.dto.UserDto)
+2018-03-06 13:07:06.431  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/private/todos],methods=[GET]}" onto public org.springframework.data.domain.Page<com.pyco.todolist.doimain.Task> com.pyco.todolist.endpoint.TaskEndpoint.getTodos(org.springframework.data.domain.Pageable,java.lang.String,java.time.LocalDate,java.time.LocalDate)
+2018-03-06 13:07:06.432  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/private/todos],methods=[POST]}" onto public com.pyco.todolist.dto.TaskDto com.pyco.todolist.endpoint.TaskEndpoint.createTodo(com.pyco.todolist.dto.TaskDto)
+2018-03-06 13:07:06.433  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/private/todos],methods=[PUT]}" onto public com.pyco.todolist.dto.TaskDto com.pyco.todolist.endpoint.TaskEndpoint.updateTodo(com.pyco.todolist.dto.TaskDto)
+2018-03-06 13:07:06.433  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v1/private/todos/{taskId}],methods=[DELETE]}" onto public void com.pyco.todolist.endpoint.TaskEndpoint.deleteTodo(java.lang.String)
+2018-03-06 13:07:06.437  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-03-06 13:07:06.438  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-03-06 13:07:06.439  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-03-06 13:07:06.442  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-06 13:07:06.443  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-06 13:07:06.627  INFO 2481 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-03-06 13:07:07.010  INFO 2481 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f8659d0, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a9869a8, org.springframework.security.web.header.HeaderWriterFilter@4e2cdc51, org.springframework.security.web.authentication.logout.LogoutFilter@ff03361, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@176333ee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40f9f60d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a9b92c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@278fe428, org.springframework.security.web.session.SessionManagementFilter@1124910c, org.springframework.security.web.access.ExceptionTranslationFilter@171aa66, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31f31b20]
+2018-03-06 13:07:07.269  INFO 2481 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@229c6181: startup date [Tue Mar 06 13:07:03 ICT 2018]; root of context hierarchy
+2018-03-06 13:07:07.355  INFO 2481 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-06 13:07:07.355  INFO 2481 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-06 13:07:07.378  INFO 2481 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalHandleExceptionHandler
+2018-03-06 13:07:07.409  INFO 2481 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-06 13:07:07.722  INFO 2481 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-06 13:07:07.731  INFO 2481 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-03-06 13:07:07.732  INFO 2481 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-03-06 13:07:07.751  INFO 2481 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-03-06 13:07:07.802  INFO 2481 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-03-06 13:07:08.135  INFO 2481 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8001 (http)
+2018-03-06 13:07:08.347  INFO 2481 --- [main] com.pyco.todolist.receiver.Sender        : sending payload='Hello Spring Kafka!' to topic='helloworld.t'
+2018-03-06 13:07:08.363  INFO 2481 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2018-03-06 13:07:08.368  INFO 2481 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2018-03-06 13:07:08.395  INFO 2481 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 0.10.1.1
+2018-03-06 13:07:08.395  INFO 2481 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : f10ef2720b03b247
+2018-03-06 13:07:08.549  INFO 2481 --- [main] com.pyco.todolist.CoreApplication        : Started CoreApplication in 5.989 seconds (JVM running for 6.468)
+2018-03-06 13:27:03.491  INFO 2481 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-06 13:27:03.491  INFO 2481 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-03-06 13:27:03.510  INFO 2481 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2018-03-06 16:41:20.745  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 16:55:41.067  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:89, serverValue:3}] to localhost:27000
+2018-03-06 16:55:41.068  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=151295}
+2018-03-06 16:55:51.070  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 17:39:21.958  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:351, serverValue:3}] to localhost:27000
+2018-03-06 17:39:21.958  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=196833}
+2018-03-06 17:39:31.964  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 17:44:52.096  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:384, serverValue:3}] to localhost:27000
+2018-03-06 17:44:52.097  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=172113}
+2018-03-06 17:45:02.101  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 17:50:32.213  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:418, serverValue:3}] to localhost:27000
+2018-03-06 17:50:32.214  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=246641}
+2018-03-06 17:50:42.220  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 17:54:22.307  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:441, serverValue:3}] to localhost:27000
+2018-03-06 17:54:22.307  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=351366}
+2018-03-06 17:54:32.311  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 17:56:52.358  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:456, serverValue:3}] to localhost:27000
+2018-03-06 17:56:52.359  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=176061}
+2018-03-06 17:57:02.362  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 17:59:02.412  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:469, serverValue:3}] to localhost:27000
+2018-03-06 17:59:02.412  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=165655}
+2018-03-06 17:59:12.419  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 18:09:52.983  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:534, serverValue:1}] to localhost:27000
+2018-03-06 18:09:52.984  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=157974}
+2018-03-06 18:10:02.985  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 18:20:03.221  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:595, serverValue:3}] to localhost:27000
+2018-03-06 18:20:03.222  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=201707}
+2018-03-06 18:20:13.226  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
+2018-03-06 18:23:03.279  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:613, serverValue:3}] to localhost:27000
+2018-03-06 18:23:03.281  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 2]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=187663}
+2018-03-06 18:23:13.284  INFO 2481 --- [cluster-ClusterId{value='5a9e30094ca3a009b1438a9c', description='null'}-localhost:27000] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27000
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:127) ~[mongo-java-driver-3.4.3.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_162]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_162]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_162]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_162]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:57) ~[mongo-java-driver-3.4.3.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongo-java-driver-3.4.3.jar:na]
+	... 3 common frames omitted
+
